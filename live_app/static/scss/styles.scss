@@ -244,32 +244,44 @@
 
                     #file_disclosure{
                         cursor: pointer;
+                        display: flex;
                         font-weight: bold;
                         font-family: $primary_font;
                         font-size: $size_h5_h6;
                         text-align: center;
                         width: 47%;
-                        padding: $primary_padding 0;
+                        max-height: 6em;
+                        aspect-ratio: 1/1;
                         margin: auto;
                         background-color: $primary_color;
                         border-radius: $primary_border;
                         border: $border_size solid #000;
                         transition: 0.2s ease-in-out;
+
+                        div{
+                            margin: auto;
+                        }
                     }
     
                     #btn_spread{
+                        display: flex;
                         cursor: pointer;
                         font-weight: bold;
                         font-family: $primary_font;
                         font-size: $size_h5_h6;
                         text-align: center;
                         width: 47%;
-                        padding: $primary_padding 0;
+                        max-height: 6em;
+                        aspect-ratio: 1/1;
                         margin: auto;
                         background-color: $primary_color;
                         border-radius: $primary_border;
                         border: $border_size solid #000;
                         transition: 0.2s ease-in-out;
+
+                        div{
+                            margin: auto;
+                        }
                     }
                                         
                     #file_disclosure:hover, #btn_spread:hover{
@@ -437,32 +449,72 @@
             color: #000;
             overflow: hidden;
 
-            #votes_you_have{
+            #votation{
+                width: 100%;
+                height: 42%;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: $second_margin;
                 font-family: $primary_font;
-                font-size: $size_p;
-                width: 65%;
-                padding: 0.5em;
-                border: $border_size solid #000;
-                border-radius: $primary_border;
-                background-color: #fff;
-                text-align: center;
-                margin: auto auto 0 auto;
 
-                *{
-                    margin: 0;
+                #next_playlist{
+                    height: 80%;
+                    aspect-ratio: 1/1 !important;
+                    display: flex;
+                    margin: auto $second_margin auto auto;
+                    flex-direction: column;
+                    border: $border_size solid #000;
+                    border-radius: $primary_border;
+                    background-color: #fff;
+                    
+                    div{
+                        width: 100%;
+                        overflow: hidden;
+                        margin: 0 auto auto auto;
+
+                        h4{
+                            margin: 0;
+                            text-align: center;
+                            color: $second_color;
+                            white-space: nowrap;
+                            animation: scroll_text_anim 4s infinite linear;
+                        }
+                    }
+                    p{
+                        white-space: nowrap;
+                        size: $size_p;
+                        margin: auto auto 0 auto;
+                    }
                 }
-                h4{
-                    font-size: $size_h1;
-                    color: $second_color;
+
+                #votes_you_have{
+                    height: 80%;
+                    aspect-ratio: 1/1;
+                    display: flex;
+                    margin: auto auto auto 0;
+                    flex-direction: column;
+                    border: $border_size solid #000;
+                    border-radius: $primary_border;
+                    background-color: #fff;
+
+                    p{
+                        margin: 0 auto auto auto;
+                        text-align: center;
+                    }
+                    h4{
+                        margin: auto auto 0 auto;
+                        font-size: $size_h1;
+                        color: $second_color;
+                    }
                 }
             }
 
             #current_vote{
                 width: 100%;
-                height: 50%;
+                height: 42%;
                 display: flex;
                 flex-direction: row;
-                margin-bottom: auto;
+                margin: 0 auto auto auto;
 
                 #selected_playlist{
                     height: 80%;
@@ -471,7 +523,7 @@
                     border-radius: $primary_border;
                     border: $border_size solid #000;
                     background-image: url('/static/imgs/bg.jpg');
-                    background-position: center;
+                    background-position: top;
                     background-size: auto 100%;
                     background-repeat: no-repeat;
                 }
@@ -479,8 +531,7 @@
                     display: flex;
                     cursor: pointer;
                     height: 80%;
-                    width: auto;
-                    padding: 0 $primary_padding;
+                    aspect-ratio: 1/1;
                     font-family: $primary_font;
                     font-weight: bold;
                     text-align: center;
@@ -555,6 +606,7 @@
             box-shadow: 25px 25px #000000;
 
             *{
+                color: #000;
                 text-decoration: none;
                 font-size: $size_h3;
                 margin: auto;
@@ -562,7 +614,7 @@
             }
 
             *:hover{
-                transform: scale(1.05, 1.05);
+                transform: scale(1.05, 1.05) rotate(10deg);
             }
         }
     }

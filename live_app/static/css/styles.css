@@ -234,31 +234,41 @@ body {
 }
 #content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure {
   cursor: pointer;
+  display: flex;
   font-weight: bold;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8em;
   text-align: center;
   width: 47%;
-  padding: 1.5em 0;
+  max-height: 6em;
+  aspect-ratio: 1/1;
   margin: auto;
   background-color: #B3DC20;
   border-radius: 0.5em;
   border: 0.15em solid #000;
   transition: 0.2s ease-in-out;
 }
+#content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure div {
+  margin: auto;
+}
 #content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread {
+  display: flex;
   cursor: pointer;
   font-weight: bold;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8em;
   text-align: center;
   width: 47%;
-  padding: 1.5em 0;
+  max-height: 6em;
+  aspect-ratio: 1/1;
   margin: auto;
   background-color: #B3DC20;
   border-radius: 0.5em;
   border: 0.15em solid #000;
   transition: 0.2s ease-in-out;
+}
+#content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread div {
+  margin: auto;
 }
 #content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure:hover, #content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread:hover {
   transform: scale(1.05, 1.05);
@@ -406,30 +416,66 @@ body {
   color: #000;
   overflow: hidden;
 }
-#vote_lofi #vote #votes_you_have {
+#vote_lofi #vote #votation {
+  width: 100%;
+  height: 42%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1em;
-  width: 65%;
-  padding: 0.5em;
+}
+#vote_lofi #vote #votation #next_playlist {
+  height: 80%;
+  aspect-ratio: 1/1 !important;
+  display: flex;
+  margin: auto 1em auto auto;
+  flex-direction: column;
   border: 0.15em solid #000;
   border-radius: 0.5em;
   background-color: #fff;
+}
+#vote_lofi #vote #votation #next_playlist div {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto auto auto;
+}
+#vote_lofi #vote #votation #next_playlist div h4 {
+  margin: 0;
   text-align: center;
+  color: #07D6FF;
+  white-space: nowrap;
+  animation: scroll_text_anim 4s infinite linear;
+}
+#vote_lofi #vote #votation #next_playlist p {
+  white-space: nowrap;
+  size: 1em;
   margin: auto auto 0 auto;
 }
-#vote_lofi #vote #votes_you_have * {
-  margin: 0;
+#vote_lofi #vote #votation #votes_you_have {
+  height: 80%;
+  aspect-ratio: 1/1;
+  display: flex;
+  margin: auto auto auto 0;
+  flex-direction: column;
+  border: 0.15em solid #000;
+  border-radius: 0.5em;
+  background-color: #fff;
 }
-#vote_lofi #vote #votes_you_have h4 {
+#vote_lofi #vote #votation #votes_you_have p {
+  margin: 0 auto auto auto;
+  text-align: center;
+}
+#vote_lofi #vote #votation #votes_you_have h4 {
+  margin: auto auto 0 auto;
   font-size: 2em;
   color: #07D6FF;
 }
 #vote_lofi #vote #current_vote {
   width: 100%;
-  height: 50%;
+  height: 42%;
   display: flex;
   flex-direction: row;
-  margin-bottom: auto;
+  margin: 0 auto auto auto;
 }
 #vote_lofi #vote #current_vote #selected_playlist {
   height: 80%;
@@ -438,7 +484,7 @@ body {
   border-radius: 0.5em;
   border: 0.15em solid #000;
   background-image: url("/static/imgs/bg.jpg");
-  background-position: center;
+  background-position: top;
   background-size: auto 100%;
   background-repeat: no-repeat;
 }
@@ -446,8 +492,7 @@ body {
   display: flex;
   cursor: pointer;
   height: 80%;
-  width: auto;
-  padding: 0 1.5em;
+  aspect-ratio: 1/1;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   text-align: center;
@@ -512,13 +557,14 @@ body {
   box-shadow: 25px 25px #000000;
 }
 #right_content #social_medias * {
+  color: #000;
   text-decoration: none;
   font-size: 1.5em;
   margin: auto;
   transition: 0.2s ease-in-out;
 }
 #right_content #social_medias *:hover {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05) rotate(10deg);
 }
 
 /*# sourceMappingURL=styles.css.map */
