@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>radio lofi</title>
+    </head>
+    <body>
+        <audio id="audio" src="" preload="auto" controls></audio>
+
+        <a id="btn_playlist1" onclick="playlist1()" href="#">Playlist 1</a>
+        <a id="btn_playlist2" onclick="playlist2()" href="#">Playlist 2</a>
+
+        <script>
+            const audio = document.querySelector('#audio');
+            const btn_playlist1 = document.querySelector('#btn_playlist1');
+            const btn_playlist2 = document.querySelector('#btn_playlist2');
+
+            const list1 = [
+            "./lofi-study-112191.mp3",
+            "./lofi-summer-background-112369.mp3",
+            "./relaxed-vlog-night-street-131746.mp3",
+            "./romantic-dinner-112192.mp3"
+            ];
+
+            const list2 = [
+            "./abstract-world-127012.mp3",
+            "./chillhop-beat-quotthousand-milesquot-113254.mp3",
+            "./coding-night-112186.mp3",
+            "./coffee-and-herbs-13066.mp3"
+            ];
+
+            let playlists = [list1, list2];
+            var current_playlist, i = 0;
+
+            function playlist1(){
+                i = 0;
+                audio.src = playlists[0][0];
+                current_playlist = 0;
+                audio.play();
+            }
+            function playlist2(){
+                i = 0;
+                audio.src = playlists[1][0];
+                current_playlist = 1;
+                audio.play();
+            }
+
+            audio.addEventListener('ended', function () {
+                i = ++i < playlists[current_playlist].length ? i : 0;
+                if (i == 0){
+                    current_playlist = ++current_playlist < playlists.length ? current_playlist : 0;
+                }
+                console.log('Tocando musica: ' + playlists[current_playlist][i] + ' da Playlist: ' + (current_playlist + 1))
+                audio.src = playlists[current_playlist][i];
+                audio.play();
+            }, true);
+        </script>
+    </body>
+</html>

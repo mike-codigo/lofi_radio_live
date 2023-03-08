@@ -1,0 +1,417 @@
+/* VARIABLES */
+/* FONTS */
+/* COLORS */
+/* BORDERS, MARGINS and PADDINGS */
+/* ANIMATIONS */
+@keyframes rotate_disc {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scroll_text_anim {
+  from {
+    -moz-transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@keyframes scroll_text_name_m {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes bg_animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes bg_animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes bg_animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes bg_animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* BODY */
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(270deg, #b3dc20, #07d6ff);
+  background-size: 400% 400%;
+  -webkit-animation: bg_animation 30s ease infinite;
+  -moz-animation: bg_animation 30s ease infinite;
+  -o-animation: bg_animation 30s ease infinite;
+  animation: bg_animation 30s ease infinite;
+}
+
+/* TOP CONTENT*/
+#top_content {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 4em;
+  width: calc(75% - (8em + 40px));
+  height: calc(70% - 12em);
+  border-radius: 0.5em;
+}
+
+/* LEFT NAVBAR */
+#content_left {
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - 1em);
+  height: 100%;
+  margin: 1em;
+  /* ACTUAL PLAYLIST */
+  /* DISCLOSURE and DONATIONS */
+}
+#content_left #actual_playlist {
+  width: 100%;
+  height: 48%;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  background-color: #fff;
+}
+#content_left #actual_playlist #disc_circle {
+  display: flex;
+  margin: 1em auto auto auto;
+  aspect-ratio: 1/1;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #000000;
+  shape-outside: circle();
+  filter: drop-shadow(-1px 15px 3px rgba(34, 34, 34, 0.5));
+}
+#content_left #actual_playlist #disc_circle #playlist_img {
+  margin: auto;
+  width: 98%;
+  height: 98%;
+  clip-path: circle();
+  background-image: url("/static/imgs/bg.jpg");
+  background-position: center;
+  background-size: auto 100%;
+  animation-name: rotate_disc;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#content_left #actual_playlist #playlist_info {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  height: 50%;
+  overflow: hidden;
+}
+#content_left #actual_playlist #playlist_info * {
+  margin: 0 auto 1em auto;
+}
+#content_left #actual_playlist #playlist_info h4 {
+  white-space: nowrap;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+  animation: scroll_text_name_m 10s infinite linear;
+  margin: auto;
+}
+#content_left #actual_playlist #playlist_info h5, #content_left #actual_playlist #playlist_info h6 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+  color: #555;
+}
+#content_left #disclosure_donations {
+  width: 100%;
+  height: 48%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  background-color: #fff;
+}
+#content_left #disclosure_donations #disclosure {
+  width: 95%;
+  height: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+#content_left #disclosure_donations #disclosure h5 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+}
+#content_left #disclosure_donations #disclosure #btns_disclosure {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+#content_left #disclosure_donations #disclosure #btns_disclosure input[type=file] {
+  display: none;
+}
+#content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure {
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  width: 47%;
+  padding: 1.5em 0;
+  margin: auto;
+  background-color: #B3DC20;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  transition: 0.2s ease-in-out;
+}
+#content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread {
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  width: 47%;
+  padding: 1.5em 0;
+  margin: auto;
+  background-color: #B3DC20;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  transition: 0.2s ease-in-out;
+}
+#content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure:hover, #content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread:hover {
+  transform: scale(1.05, 1.05);
+}
+#content_left #disclosure_donations #donations {
+  width: 95%;
+  height: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+#content_left #disclosure_donations #donations h5 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+}
+#content_left #disclosure_donations #donations #btns_donate {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+#content_left #disclosure_donations #donations #btns_donate * {
+  margin: auto;
+  width: 30%;
+  height: 50%;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  transition: 0.2s ease-in-out;
+}
+#content_left #disclosure_donations #donations #btns_donate *:hover {
+  transform: scale(1.05, 1.05);
+}
+#content_left #disclosure_donations #donations #btns_donate #pix {
+  background-image: url("/static/imgs/payments/pix.png");
+}
+#content_left #disclosure_donations #donations #btns_donate #stripe {
+  background-image: url("/static/imgs/payments/stripe.gif");
+  background-color: #6772e5;
+}
+#content_left #disclosure_donations #donations #btns_donate #paypal {
+  background-image: url("/static/imgs/payments/paypal.gif");
+}
+
+/* CHARACTER */
+#character {
+  width: 75%;
+  height: 100%;
+  margin: 1em;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  background-color: #fff;
+}
+#character canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* BOTTOM CONTENT */
+#bottom_content {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 4em;
+  width: calc(75% - (8em + 40px));
+  max-width: calc(75% - (8em + 40px));
+  height: 30%;
+  max-height: 800px;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  background-color: #fff;
+  box-shadow: 25px 25px #000000;
+  overflow: hidden;
+}
+#bottom_content h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2em;
+  width: fit-content;
+  white-space: nowrap;
+  animation-timing-function: cubic-bezier();
+  animation: scroll_text_anim 15s infinite linear;
+}
+
+#vota_lofi {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80%;
+  background-color: #f3f3f3;
+}
+
+#playlists {
+  min-width: 35%;
+  height: 100%;
+}
+#playlists h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#list_lofi {
+  min-width: 65%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #e7e7e7;
+}
+#list_lofi h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: #373f51;
+}
+#list_lofi p {
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #373f51;
+  font-size: 1em;
+  font-weight: 300;
+  max-height: 50px;
+  overflow: hidden;
+  padding-left: 40px;
+  transition: 0.1s ease-in-out;
+}
+#list_lofi p:hover {
+  color: #c40089;
+  text-decoration: underline;
+  transform: scale(1.02, 1.02);
+}
+
+/* LIVE CHAT */
+#live_chat {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: calc(100% - 8em);
+  margin: 4em;
+  width: calc(27% - 4em);
+  max-width: 27%;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  background-color: #fff;
+  box-shadow: 25px 25px #000000;
+  overflow: hidden;
+}
+#live_chat iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
