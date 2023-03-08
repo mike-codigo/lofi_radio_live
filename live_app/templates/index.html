@@ -4,6 +4,7 @@
         {% load static %}
         <title>Radio - Lofi</title>
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <script src="{% static 'js/scripts.js' %}"></script>
         <script type="importmap">
             {
@@ -192,9 +193,9 @@
             
             <div id="bottom_content">
                 <h1>Vote for a playlist -------- Vote em uma Playlist ------- Vota por una lista de reproducción -------- プレイリストに投票してください。--------- Votez pour une playlist</h1>
-                <div id="vota_lofi">
+                <div id="vote_lofi">
                     <div id="playlists">
-                        <h3>Playlists ></h3>
+                        <h3>Select a Playlists ></h3>
                         <div id="icons">
 
                         </div>
@@ -205,11 +206,34 @@
                             <p onclick="play_song('{{ lofi }}')">{{ lofi }}</p>
                         {% endfor %}
                     </div>
+                    <div id="vote">
+                        <div id="votes_you_have"><h4>1</h4> Vote left</div>
+                        <div id="current_vote">
+                            <div id="selected_playlist"></div>
+                            <div id="btn_vote" onclick="send_vote()"><h4>Send vote</h4></div>
+                        </div>        
+                    </div>
                 </div>
                 
             </div>
-            <div id="live_chat">
-                <iframe src="https://www.youtube.com/live_chat?v={{ video_id }}&amp;embed_domain={{ domain }}" frameborder="0" scrolling="0"></iframe>
+            <div id="right_content">
+                <div id="live_content">
+                    <div id="live_player">
+                        <iframe src="https://www.youtube.com/embed/UedTcufyrHc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div id="live_chat">
+                        <iframe src="https://www.youtube.com/live_chat?v=UedTcufyrHc&amp;embed_domain=83ce-2804-14c-b387-23f5-2cf9-b9d9-8387-e98c.sa.ngrok.io" frameborder="0" scrolling="0"></iframe>
+
+                       <!-- <iframe src="https://www.youtube.com/live_chat?v={{ video_id }}&amp;embed_domain={{ domain }}" frameborder="0" scrolling="0"></iframe> --> 
+                    </div>
+                </div>
+                <div id="social_medias">
+                    <a href="" target="_blank"><i style="color: #4295f5;" class="fa-brands fa-facebook"></i></a>
+                    <a href="" target="_blank"><i style="color: #f542ce;" class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCI0bI_IO7F_UT3TMA3lN91g" target="_blank"><i style="color: #f55142;" class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/murilo-d-7208a9111/?_l=pt_BR" target="_blank"><i style="color: #42d4f5;" class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/mike-codigo" target="_blank"><i style="color: #f58442;" class="fa-brands fa-square-github"></i></a>
+                </div>
             </div>
     </body>
 </html>

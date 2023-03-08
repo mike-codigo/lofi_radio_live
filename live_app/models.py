@@ -18,9 +18,14 @@ class User(AbstractUser):
         }
 
 class Playlist(models.Model):
-    name = models.CharField(max_length=500)
+    PLAY_STATE_CHOICES = [('RUNNING', 'Running'), ('NEXT', 'Next')]
 
-class Musicas(models.Model):
+    name = models.CharField(max_length=500)
+    duration = models.CharField(max_length=100)
+    play_state = models.CharField(max_length=7, choices=PLAY_STATE_CHOICES, default='RUNNING')
+    votes = models.IntegerField()
+
+class Musics(models.Model):
     name = models.CharField(max_length=500)
     file = models.FileField(blank=False)
     playlist = models.ManyToManyField(Playlist,blank=False)

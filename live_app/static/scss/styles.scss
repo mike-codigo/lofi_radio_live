@@ -135,13 +135,12 @@
         flex-direction: column;
         width: calc(25% - $second_margin);
         height: 100%;
-        margin: $second_margin;
 
         /* ACTUAL PLAYLIST */
         #actual_playlist{
             width: 100%;
-            height: 48%;
-            margin-bottom: auto;
+            height: -webkit-fill-available;
+            margin-bottom: $second_margin;
             display: flex;
             flex-direction: column;
             border-radius: $primary_border;
@@ -158,6 +157,7 @@
                 background-color: #000000;
                 shape-outside: circle();
                 filter: drop-shadow(-1px 15px 3px rgba(34, 34, 34, 0.5));
+                transition: 0.3s ease-in-out;
     
                 #playlist_img{
                     margin: auto;
@@ -172,6 +172,11 @@
                     animation-iteration-count: infinite;
                     animation-timing-function: linear;
                 }
+
+            }
+
+            #disc_circle:hover{
+                transform: scale(1.05, 1.05);
             }
 
             #playlist_info{
@@ -205,7 +210,7 @@
         /* DISCLOSURE and DONATIONS */
         #disclosure_donations{
             width: 100%;
-            height: 48%;
+            height: -webkit-fill-available;
             margin-top: auto;
             display: flex;
             flex-direction: column;
@@ -311,6 +316,7 @@
 
                     #pix{
                         background-image: url("/static/imgs/payments/pix.png");
+                        background-size: 50% !important;
                     }
     
                     #stripe{
@@ -329,12 +335,12 @@
 
 /* CHARACTER */
     #character{
-        width: 75%;
+        width: -webkit-fill-available;
         height: 100%;
-        margin: $second_margin;
-        border-radius: $primary_border;
+        margin-left: $second_margin;
+        /*border-radius: $primary_border;
         border: $border_size solid #000;
-        background-color: #fff;
+        background-color: #fff;*/
 
         canvas{
             width: 100% !important;
@@ -370,61 +376,134 @@
         }
     }
 
-    #vota_lofi{
+    #vote_lofi{
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 80%;
         background-color: #f3f3f3;
-    }
-
-    #playlists{
+    
+        #playlists{
         min-width: 35%;
         height: 100%;
 
-        h3{
-            font-family: $primary_font;
-            font-size: $size_h3;
-            text-align: center;
+            h3{
+                font-family: $primary_font;
+                font-size: $size_h3;
+                text-align: center;
+            }
         }
-    }
 
-    #list_lofi {
-        min-width: 65%;
-        height: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
-        background-color: #e7e7e7;
+        #list_lofi {
+            min-width: 30%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #e7e7e7;
 
-        h3 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: $size_h3;
-            text-align: center;
-            color: $contrast_color;
+            h3 {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: $size_h3;
+                text-align: center;
+                color: $contrast_color;
+            }
+            p {
+                cursor: pointer;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: $contrast_color;
+                font-size: $size_p;
+                font-weight: 300;
+                max-height: 50px;
+                overflow: hidden;
+                padding-left: 40px;
+                transition: 0.1s ease-in-out;
+            }
+
+            p:hover {
+                color: #c40089;
+                text-decoration: underline;
+                transform: scale(1.02,1.02);
+            }
         }
-        p {
-            cursor: pointer;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: $contrast_color;
-            font-size: $size_p;
-            font-weight: 300;
-            max-height: 50px;
+
+        #vote {
+            display: flex;
+            flex-direction: column;
+            min-width: 35%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #fff;
+            color: #000;
             overflow: hidden;
-            padding-left: 40px;
-            transition: 0.1s ease-in-out;
-        }
 
-        p:hover {
-            color: #c40089;
-            text-decoration: underline;
-            transform: scale(1.02,1.02);
+            #votes_you_have{
+                font-family: $primary_font;
+                font-size: $size_p;
+                width: 65%;
+                padding: 0.5em;
+                border: $border_size solid #000;
+                border-radius: $primary_border;
+                background-color: #fff;
+                text-align: center;
+                margin: auto auto 0 auto;
+
+                *{
+                    margin: 0;
+                }
+                h4{
+                    font-size: $size_h1;
+                    color: $second_color;
+                }
+            }
+
+            #current_vote{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: auto;
+
+                #selected_playlist{
+                    height: 80%;
+                    aspect-ratio: 1/1;
+                    margin: auto $second_margin auto auto ;
+                    border-radius: $primary_border;
+                    border: $border_size solid #000;
+                    background-image: url('/static/imgs/bg.jpg');
+                    background-position: center;
+                    background-size: auto 100%;
+                    background-repeat: no-repeat;
+                }
+                #btn_vote{
+                    display: flex;
+                    cursor: pointer;
+                    height: 80%;
+                    width: auto;
+                    padding: 0 $primary_padding;
+                    font-family: $primary_font;
+                    font-weight: bold;
+                    text-align: center;
+                    border-radius: $primary_border;
+                    border: $border_size solid #000;
+                    background-color: $primary_color;
+                    margin: auto auto auto 0;
+                    transition: 0.3s ease-in-out;
+                    
+                    h4{
+                        margin: auto;
+                    }
+                }
+    
+                #btn_vote:hover{
+                    transform: scale(1.05, 1.05);
+                }
+            }
         }
     }
-
-
 
 /* LIVE CHAT */
-    #live_chat{
+    #right_content{
         position: fixed;
         top: 0;
         right: 0;
@@ -432,14 +511,58 @@
         margin: $primary_margin;
         width: calc(27% - ($primary_margin));
         max-width: 27%;
-        border-radius: $primary_border;
-        border: $border_size solid #000;
-        background-color: #fff;
-        box-shadow: 25px 25px #000000;
-        overflow: hidden;
 
-        iframe{
+        #live_content{
+            height: calc(95% - $primary_margin);
+            margin-bottom: $primary_margin;
+            border-radius: $primary_border;
+            border: $border_size solid #000;
+            background-color: #fff;
+            box-shadow: 25px 25px #000000;
+
+            #live_player{
+                height: 30%;
+                width: 100%;
+                overflow: hidden;
+
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            #live_chat{
+                width: 100%;
+                height: 70%;
+                overflow: hidden;
+    
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        #social_medias{
             width: 100%;
-            height: 100%;
+            height: 5%;
+            display: flex;
+            flex-direction: row;
+            border-radius: $primary_border;
+            border: $border_size solid #000;
+            background-color: #fff;
+            box-shadow: 25px 25px #000000;
+
+            *{
+                text-decoration: none;
+                font-size: $size_h3;
+                margin: auto;
+                transition: 0.2s ease-in-out;
+            }
+
+            *:hover{
+                transform: scale(1.05, 1.05);
+            }
         }
     }
