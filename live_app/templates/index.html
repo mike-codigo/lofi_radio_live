@@ -82,7 +82,7 @@
         
                         controls.screenSpacePanning = false;
         
-                        controls.minDistance = 2;
+                        controls.minDistance = 1.7;
                         controls.maxDistance = 2;
         
                         controls.maxPolarAngle = Math.PI / 2;
@@ -168,20 +168,26 @@
                         </div>
                     </div>
                     <div id="disclosure_donations">
-                        <div id="disclosure">
-                            <h5>Spread an image on our live for 1 minute</h5>
-                            <div id="btns_disclosure">
-                                <label for="file_disclosure" id="file_disclosure" onclick="open_input_disclosure()"><div>Upload Image</div></label>                       
-                                <input name="file_disclosure" id="input_disclosure" type="file" accept="image/png, image/jpg, image/gif, image/jpeg">
-                                <div id="btn_spread"><div>Send disclosure</div></div>
-                            </div>
+                        <div id="btns">
+                            <div id="btn_open_vote" onclick="open_vote()"><h3>Vote one Playlist</h3></div>
+                            <div id="btn_open_live_chat" onclick="open_live_chat()"><h3>Open Chat</h3></div>
                         </div>
-                        <div id="donations">
-                            <h5>Make donations for our project, get to know our projects on social networks</h5> 
-                            <div id="btns_donate">
-                                <div id="pix"></div>
-                                <div id="stripe"></div>
-                                <div id="paypal"></div>
+                        <div id="div_disclosure_donations">
+                            <div id="disclosure">
+                                <h5>Spread an image on our live for 1 minute</h5>
+                                <div id="btns_disclosure">
+                                    <label for="file_disclosure" id="file_disclosure" onclick="open_input_disclosure()"><div>Upload Image</div></label>                       
+                                    <input name="file_disclosure" id="input_disclosure" type="file" accept="image/png, image/jpg, image/gif, image/jpeg">
+                                    <div id="btn_spread"><div>Send disclosure</div></div>
+                                </div>
+                            </div>
+                            <div id="donations">
+                                <h5>Make donations for our project, get to know our projects on social networks</h5> 
+                                <div id="btns_donate">
+                                    <div id="pix"></div>
+                                    <div id="stripe"></div>
+                                    <div id="paypal"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -231,12 +237,18 @@
                     </div>
                 </div>
                 <div id="social_medias">
-                    <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UCI0bI_IO7F_UT3TMA3lN91g" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.linkedin.com/in/murilo-d-7208a9111/?_l=pt_BR" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/mike-codigo" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                    <img id="logo" src="{% static '/imgs/logo.ico' %}" alt="logo_odrip">
+                    <div id="icons">
+                        <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI0bI_IO7F_UT3TMA3lN91g" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/murilo-d-7208a9111/?_l=pt_BR" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/mike-codigo" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                    </div>
                 </div>
+            </div>
+            <div id="btn_back" onclick="btn_back()">
+                <i class="fa-solid fa-arrow-left"></i>
             </div>
     </body>
 </html>

@@ -101,7 +101,7 @@
   background: #555;
 }
 
-/* BODY */
+/* BODY and APP */
 body {
   width: 100%;
   height: 100vh;
@@ -137,6 +137,7 @@ body {
   flex-direction: column;
   width: calc(25% - 1em);
   height: 100%;
+  transition: 0.5s ease-in-out;
   /* ACTUAL PLAYLIST */
   /* DISCLOSURE and DONATIONS */
 }
@@ -203,14 +204,21 @@ body {
 #content_left #disclosure_donations {
   width: 100%;
   height: -webkit-fill-available;
-  margin-top: auto;
+}
+#content_left #disclosure_donations #btns {
+  display: none;
+}
+#content_left #disclosure_donations #div_disclosure_donations {
+  width: 100%;
+  height: 100%;
+  margin: 0;
   display: flex;
   flex-direction: column;
   border-radius: 0.5em;
   border: 0.15em solid #000;
   background-color: #fff;
 }
-#content_left #disclosure_donations #disclosure {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure {
   width: 95%;
   height: 50%;
   margin: auto;
@@ -218,28 +226,28 @@ body {
   flex-direction: column;
   margin: auto;
 }
-#content_left #disclosure_donations #disclosure h5 {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure h5 {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8em;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure {
   width: 100%;
   display: flex;
   flex-direction: row;
   height: 50%;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure input[type=file] {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure input[type=file] {
   display: none;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure #file_disclosure {
   cursor: pointer;
   display: flex;
   font-weight: bold;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8em;
   text-align: center;
-  width: 47%;
+  width: calc(50% - 2em);
   max-height: 6em;
   aspect-ratio: 1/1;
   margin: auto;
@@ -248,17 +256,17 @@ body {
   border: 0.15em solid #000;
   transition: 0.2s ease-in-out;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure div {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure #file_disclosure div {
   margin: auto;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure #btn_spread {
   display: flex;
   cursor: pointer;
   font-weight: bold;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8em;
   text-align: center;
-  width: 47%;
+  width: calc(50% - 2em);
   max-height: 6em;
   aspect-ratio: 1/1;
   margin: auto;
@@ -267,13 +275,14 @@ body {
   border: 0.15em solid #000;
   transition: 0.2s ease-in-out;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread div {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure #btn_spread div {
   margin: auto;
 }
-#content_left #disclosure_donations #disclosure #btns_disclosure #file_disclosure:hover, #content_left #disclosure_donations #disclosure #btns_disclosure #btn_spread:hover {
+#content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure #file_disclosure:hover, #content_left #disclosure_donations #div_disclosure_donations #disclosure #btns_disclosure #btn_spread:hover {
   transform: scale(1.05, 1.05);
+  box-shadow: 5px 5px #000;
 }
-#content_left #disclosure_donations #donations {
+#content_left #disclosure_donations #div_disclosure_donations #donations {
   width: 95%;
   height: 50%;
   margin: auto;
@@ -281,20 +290,20 @@ body {
   flex-direction: column;
   margin: auto;
 }
-#content_left #disclosure_donations #donations h5 {
+#content_left #disclosure_donations #div_disclosure_donations #donations h5 {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8em;
 }
-#content_left #disclosure_donations #donations #btns_donate {
+#content_left #disclosure_donations #div_disclosure_donations #donations #btns_donate {
   width: 100%;
   display: flex;
   flex-direction: row;
   height: 50%;
 }
-#content_left #disclosure_donations #donations #btns_donate * {
+#content_left #disclosure_donations #div_disclosure_donations #donations #btns_donate * {
   margin: auto;
-  width: 30%;
+  width: calc(33% - 1em);
   height: 50%;
   cursor: pointer;
   background-position: center;
@@ -304,18 +313,19 @@ body {
   border: 0.15em solid #000;
   transition: 0.2s ease-in-out;
 }
-#content_left #disclosure_donations #donations #btns_donate *:hover {
+#content_left #disclosure_donations #div_disclosure_donations #donations #btns_donate *:hover {
   transform: scale(1.05, 1.05);
+  box-shadow: 2px 2px #000;
 }
-#content_left #disclosure_donations #donations #btns_donate #pix {
+#content_left #disclosure_donations #div_disclosure_donations #donations #btns_donate #pix {
   background-image: url("/static/imgs/payments/pix.png");
   background-size: 50% !important;
 }
-#content_left #disclosure_donations #donations #btns_donate #stripe {
+#content_left #disclosure_donations #div_disclosure_donations #donations #btns_donate #stripe {
   background-image: url("/static/imgs/payments/stripe.gif");
   background-color: #6772e5;
 }
-#content_left #disclosure_donations #donations #btns_donate #paypal {
+#content_left #disclosure_donations #div_disclosure_donations #donations #btns_donate #paypal {
   background-image: url("/static/imgs/payments/paypal.gif");
 }
 
@@ -350,6 +360,7 @@ body {
   background-color: #fff;
   box-shadow: 25px 25px #000000;
   overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 #bottom_content h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -507,6 +518,7 @@ body {
 }
 #vote_lofi #vote #current_vote #btn_vote:hover {
   transform: scale(1.05, 1.05);
+  box-shadow: 5px 5px #000;
 }
 
 /* LIVE CHAT */
@@ -526,6 +538,7 @@ body {
   border: 0.15em solid #000;
   background-color: #fff;
   box-shadow: 25px 25px #000000;
+  transition: 0.5s ease-in-out;
 }
 #right_content #live_content #live_player {
   height: 30%;
@@ -556,15 +569,180 @@ body {
   background-color: #fff;
   box-shadow: 25px 25px #000000;
 }
-#right_content #social_medias * {
+#right_content #social_medias #logo {
+  cursor: pointer;
+  width: 80px;
+  margin: auto;
+  transition: 0.3s ease-in-out;
+}
+#right_content #social_medias #logo:hover {
+  transform: scale(1.05, 1.05) rotate(10deg);
+}
+#right_content #social_medias #icons {
+  display: flex;
+  width: calc(90% - 80px);
+  height: 100%;
+  background-color: #e7e7e7;
+}
+#right_content #social_medias #icons a {
   color: #000;
   text-decoration: none;
   font-size: 1.5em;
   margin: auto;
   transition: 0.2s ease-in-out;
 }
-#right_content #social_medias *:hover {
+#right_content #social_medias #icons *:hover {
   transform: scale(1.05, 1.05) rotate(10deg);
+}
+
+/* RESPONSIVIDADE */
+@media screen and (min-width: 1920px) {
+  #right_content {
+    margin: 2em 4em 2em 2em;
+    height: calc(95% - 2em);
+  }
+  #bottom_content {
+    width: calc(75% - (10em + 40px));
+  }
+}
+@media screen and (max-width: 1280px) {
+  #btn_back {
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    bottom: 10%;
+    left: 2em;
+    cursor: pointer;
+    width: 4vh;
+    aspect-ratio: 1/1;
+    background-color: #fff;
+    border-radius: 0.5em;
+    border: 0.15em solid #000;
+    transition: 0.3s ease-in-out;
+    transform: translateX(-200%);
+    z-index: 3;
+  }
+  #btn_back i {
+    font-size: x-large;
+    margin: auto;
+  }
+  #btn_back:hover {
+    box-shadow: 5px 5px #000;
+  }
+  #right_content {
+    position: unset;
+    top: unset;
+    right: unset;
+    height: fit-content;
+    width: fit-content;
+    margin: unset;
+    z-index: 1;
+  }
+  #right_content #live_content {
+    visibility: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 8em);
+    height: 50%;
+    margin: 4em;
+    max-width: none;
+    transform: translateY(150%);
+  }
+  #right_content #social_medias {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: x-large;
+    width: calc(100% - 4em);
+    margin: 1em 2em;
+    z-index: 2;
+  }
+  #right_content #social_medias #logo {
+    width: 150px;
+  }
+  #right_content #social_medias #icons {
+    width: calc(100% - 250px);
+  }
+  #top_content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  #top_content #content_left {
+    position: fixed;
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 8em);
+    height: 30%;
+    margin: 4em;
+    max-width: none;
+    z-index: 2;
+  }
+  #top_content #content_left #actual_playlist {
+    width: calc(50% - 1em);
+    margin: 0 1em 0 0;
+  }
+  #top_content #content_left #disclosure_donations {
+    width: 50%;
+    margin: 0 1em 0 0;
+  }
+  #top_content #content_left #disclosure_donations #btns {
+    display: flex;
+    width: 100%;
+    height: calc(25% - 1em);
+    margin: 0 0 1em 0;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.5em;
+    border: 0.15em solid #000;
+    background-color: #fff;
+  }
+  #top_content #content_left #disclosure_donations #btns #btn_open_vote, #top_content #content_left #disclosure_donations #btns #btn_open_live_chat {
+    width: calc(50% - 2em);
+    height: calc(100% - 2em);
+    margin: auto;
+    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #07D6FF;
+    border-radius: 0.5em;
+    border: 0.15em solid #000;
+    transition: 0.2s ease-in-out;
+  }
+  #top_content #content_left #disclosure_donations #btns #btn_open_vote h3, #top_content #content_left #disclosure_donations #btns #btn_open_live_chat h3 {
+    font-size: large;
+    margin: auto;
+  }
+  #top_content #content_left #disclosure_donations #btns #btn_open_vote:hover, #top_content #content_left #disclosure_donations #btns #btn_open_live_chat:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 5px 5px #000;
+  }
+  #top_content #content_left #disclosure_donations #div_disclosure_donations {
+    height: 73%;
+  }
+  #top_content #character {
+    position: fixed;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #top_content #character canva {
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  #bottom_content {
+    visibility: hidden;
+    width: calc(100% - 8em);
+    margin: 4em;
+    max-width: none;
+    transform: translateY(150%);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
