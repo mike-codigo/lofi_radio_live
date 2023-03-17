@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
+from django.template import RequestContext
 from django.templatetags.static import static
 from django.contrib.auth import authenticate, login
 import pygame
@@ -24,7 +25,7 @@ def login_view(request):
 
 # INDEX
 def index(request):
-    path_lofis = "C:/Users/lilod/Desktop/Site lofi Python/site/app_lofi/live_app/static/musics/"
+    path_lofis = "H:/DESKTOP/Site lofi Python/site/app_lofi\live_app/static/musics/"
     lofi_list = sorted(os.listdir(path_lofis))
 
     video_id = "jfKfPfyJRdk"

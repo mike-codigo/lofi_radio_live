@@ -1,3 +1,16 @@
+
+var current_character = 'casual-girl';
+
+function play_song(song){
+    fetch(`/play_song/${song}`, {
+        Method: 'POST',
+        Headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
 function open_input_disclosure(){
     const input = document.querySelector("#input_disclosure");
     input.click()

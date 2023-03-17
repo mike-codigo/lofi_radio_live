@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>404 Error</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                background-color: #B3DC20;
+            }
+            #block_error{
+                width: fit-content;
+                height: fit-content;
+            }
+            #block_error *{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
+
+            h1{
+                font-size: xx-large;
+                font-weight: bold;
+                color: #000;
+            }
+            h3{
+                font-size: x-large;
+                font-weight: 500;
+                color: #4d4d4d;
+            }
+            p{
+                font-size: large;
+                font-weight: 200;
+                color: #0c0c0c;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="block_error">
+            <h1>404</h1>
+            <h3>Error</h3>
+            <p>This page does not exist on our website, make sure you have not typed wrong or contact us if the error continues. Thank you (:</p>
+        </div>
+    </body>
+</html>

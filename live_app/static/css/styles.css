@@ -133,6 +133,7 @@ body {
 
 /* LEFT NAVBAR */
 #content_left {
+  visibility: visible !important;
   display: flex;
   flex-direction: column;
   width: calc(25% - 1em);
@@ -248,7 +249,7 @@ body {
   font-size: 0.8em;
   text-align: center;
   width: calc(50% - 2em);
-  max-height: 6em;
+  max-height: 100%;
   aspect-ratio: 1/1;
   margin: auto;
   background-color: #B3DC20;
@@ -267,7 +268,7 @@ body {
   font-size: 0.8em;
   text-align: center;
   width: calc(50% - 2em);
-  max-height: 6em;
+  max-height: 100%;
   aspect-ratio: 1/1;
   margin: auto;
   background-color: #B3DC20;
@@ -305,6 +306,7 @@ body {
   margin: auto;
   width: calc(33% - 1em);
   height: 50%;
+  min-height: 2em;
   cursor: pointer;
   background-position: center;
   background-repeat: no-repeat;
@@ -338,14 +340,46 @@ body {
   border: $border_size solid #000;
   background-color: #fff;*/
 }
+#character #btn_switch_character {
+  cursor: pointer;
+  padding: 2em;
+  position: absolute;
+  top: 4em;
+  left: 14.5vw;
+  color: #000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #B3DC20;
+  border-radius: 0.5em;
+  border: 0.15em solid #000;
+  transition: 0.3s ease-in-out;
+}
+#character #btn_swithc_character {
+  box-shadow: 15px 15px #000;
+}
+#character #logo_bg_anim {
+  position: absolute;
+  width: calc(100vw - (27vw + 8em + (75vw - (8em + 40px)) / 100 * 25));
+  height: 100%;
+  left: calc(100vw - (75vw - (8em + 40px)) / 100 * 75 - (27vw + 8em + 1em));
+  background-image: url("/static/imgs/logo_icon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  z-index: -1;
+  animation: rotate_disc 10s infinite linear;
+}
 #character canvas {
   width: 100% !important;
   height: 100% !important;
+  z-index: 4;
 }
 
 /* BOTTOM CONTENT */
 #bottom_content {
   display: flex;
+  visibility: visible !important;
   flex-direction: column;
   position: fixed;
   bottom: 0;
@@ -366,6 +400,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2em;
   width: fit-content;
+  height: 20%;
   white-space: nowrap;
   animation-timing-function: cubic-bezier();
   animation: scroll_text_anim 15s infinite linear;
@@ -496,7 +531,7 @@ body {
   border: 0.15em solid #000;
   background-image: url("/static/imgs/bg.jpg");
   background-position: top;
-  background-size: auto 100%;
+  background-size: auto 101%;
   background-repeat: no-repeat;
 }
 #vote_lofi #vote #current_vote #btn_vote {
@@ -532,6 +567,7 @@ body {
   max-width: 27%;
 }
 #right_content #live_content {
+  visibility: visible !important;
   height: calc(95% - 4em);
   margin-bottom: 4em;
   border-radius: 0.5em;
@@ -566,7 +602,7 @@ body {
   flex-direction: row;
   border-radius: 0.5em;
   border: 0.15em solid #000;
-  background-color: #fff;
+  background-color: #778899;
   box-shadow: 25px 25px #000000;
 }
 #right_content #social_medias #logo {
@@ -593,6 +629,11 @@ body {
 }
 #right_content #social_medias #icons *:hover {
   transform: scale(1.05, 1.05) rotate(10deg);
+}
+
+/* BTN_BACK */
+#btn_back {
+  display: none;
 }
 
 /* RESPONSIVIDADE */
@@ -659,7 +700,7 @@ body {
     z-index: 2;
   }
   #right_content #social_medias #logo {
-    width: 150px;
+    width: 140px;
   }
   #right_content #social_medias #icons {
     width: calc(100% - 250px);
@@ -731,6 +772,21 @@ body {
     bottom: 0;
     left: 0;
     z-index: 1;
+  }
+  #top_content #character #btn_switch_character {
+    padding: 2em;
+    position: absolute;
+    top: 4em;
+    left: 35vw;
+    color: #000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #B3DC20;
+  }
+  #top_content #character #logo_bg_anim {
+    width: 100%;
+    left: unset;
   }
   #top_content #character canva {
     max-width: 100%;
